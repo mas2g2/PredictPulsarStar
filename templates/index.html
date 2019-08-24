@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>Pulsar Stars</title>
+		<style>
+			.container form
+			{
+				border : 1px solid black;
+				padding-top : 10px;
+				padding-bottom : 10px;
+				padding-left: 400px;
+				margin : auto;
+			}
+			h1
+			{
+				text-align : center;
+			}
+			input[type=submit]
+			{
+				margin-left : 100px;
+			}
+			.mip input
+			{
+				margin-left : 100px;
+			}
+			
+			.stdip input
+			{
+
+			}
+			
+			.skip input
+			{
+				margin-left : 75px;
+			}
+
+			.ekip input
+			{
+				margin-left : 18px;
+			}
+			
+			.mdmsnr input
+			{
+				margin-left : 160px;
+			}
+
+			.stddmsnr input
+			{
+				margin-left : 64px;
+			}
+
+			.ekdmsnr input
+			{
+				margin-left : 75px;
+			}
+
+			.skdmsnr input
+			{
+				margin-left : 135px;
+			}
+			.output p 
+			{
+				border : 5px solid black;
+				width : 100%;
+				height : 25px;
+			}
+			div
+			{
+				margin-top : 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Pulsar Stars</h1>
+			<form method="post" action="/predict-star">
+				<div class="mip">
+					<label for="mip"><b>Mean of Integrated Profile</b></label>
+					<input type="text" name="mip"></br>
+				</div>
+				<div class="stdip">
+					<label for="stdip"><b>Standard Deviation for Integrated Profile</b></label>
+					<input type="text" name="stdip"></br>
+				</div>
+				<div class="skip">
+					<label for="skip"><b>Skewness of Integrated Profile</b></label>
+					<input type="text" name="skip"></br>
+				</div>
+				<div class="ekip">
+					<label for="ekip"><b>Excess in kurtosis of Integrated Profile</b></label>
+					<input type="text" name="ekip"></br>
+				</div>
+				<div class="mdmsnr">
+					<label for="mdmsnr"><b>Mean of DM-SNR</b></label>
+					<input type="text" name="mdmsnr"></br>
+				</div>
+				<div class="stddmsnr">
+					<label for="stddmsnr"><b>Standard Deviation of DM-SNR</b></label>
+					<input type="text" name="stddmsnr"></br>
+				</div>
+				<div class="ekdmsnr">
+					<label for="ekdmsnr"><b>Excess in kurtosis of DM-SNR</b></label>
+					<input type="text" name="ekdmsnr"></br>
+				</div>
+				<div class="skdmsnr">
+					<label for="skdmsnr"><b>Skewness of DM-SNR</b></label>
+					<input type="text" name="skdmsnr"></br>
+				</div>
+				<div class="output">
+	                                <h1>Is it a pulsar star?</h1>
+		                               <p> {{ pred }}</p>
+		                </div>
+				<div class="submitButton">
+					<input type="submit" value="Submit">
+				</div>
+			</form>
+
+			<div class="output">
+				<h1>Is it a pulsar star?</h1>
+				<p> {{ pred }}</p>
+			</div>
+		</div>
+	</body>
+</html>
